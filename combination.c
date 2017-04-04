@@ -7,7 +7,6 @@ int* _switch(int* T,int i,int j);
 void print_array(int* T,int n);
 void combination(int* T,int n,int i);
 
-
 // The function below switch elements i and j from the array T given
 int* _switch(int* T,int i,int j){
 	
@@ -47,22 +46,15 @@ void combination(int* T,int len_T,int pivot){
 	if(pivot<len_T-1){
 
 		combination(T,len_T,pivot+1);
-		
 		int j;
-		
-		
 		
 		for(j=pivot+1;j<len_T;j++){
 
-			
 			T=_switch(T,pivot,j);
-			
-			
 			print_array(T,len_T);
-			
 			combination(T,len_T,pivot+1);
-
 			T=_switch(T,j,pivot);
+
 		}
 
 	}
@@ -77,6 +69,5 @@ int main(){
 	int T[]={1,2,3,4,5}; // The array that we would find all combinations
 	int n=5; // The array length
 	combination(T,n,START_PIVOT);
-
 	return 0;
 }
